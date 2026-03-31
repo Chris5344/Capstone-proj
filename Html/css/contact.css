@@ -1,0 +1,191 @@
+/* Color Palette from your images */
+:root {
+    --primary-orange: #ff7300;
+    --dark-bg: #0f0c29;
+    --sunset-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --glass-bg: rgba(255, 255, 255, 0.07);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--sunset-gradient);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(a.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.contact-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.contact-header h2 {
+    color: var(--primary-orange);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact-header p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* Form Styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    box-sizing: border-box; /* Crucial for padding */
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--primary-orange);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: #e66700;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 115, 0, 0.4);
+}
+
+/* Footer Styling */
+.main-footer {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px 20px 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-logo span {
+    color: var(--primary-orange);
+}
+.nav-logo{ 
+    height: 100px; /* Increase this number to make the logo bigger */
+    width: auto;
+    margin-left: -50px; /* This "pulls" the logo further to the left */
+    margin-right: 4px;
+    object-fit: contain;
+    float: left;
+    padding-top: .6px;
+    cursor: pointer;
+    
+    /* Using the blend mode again to hide that white/gray background box */
+    mix-blend-mode: screen;
+   
+    
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    margin-right: 250px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-orange);
+}
+
+.footer-socials a {
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--primary-orange);
+}
+
+.copyright {
+    text-align: center;
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 30px;
+}
+.back-text{
+    text-decoration: none;
+    color:#D8C9A7;
+    gap: 2px;
+    
+}

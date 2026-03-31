@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallpaperHub - Beautiful Wallpapers for Every Screen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/Sheet.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="https://i.imgur.com/placeholder-logo.png" alt="WallpaperHub Logo" 
+                 onerror="this.style.display='none'">
+            <span>Wallpaper<em>Hub</em></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="upload.html" class="nav-cta">Upload <i class="fas fa-arrow-up"></i></a></li>
+            <li><a href="login.html" class="nav-cta">Login <i class="fas fa-sign-in-alt"></i></a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" 
+                 alt="Hero Background">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.png" alt="WallpaperHub"
+                     onerror="this.style.display='none'">
+            </div>
+                <h1>Discover <span class="highlight">Stunning</span> Wallpapers<br>For Every Screen</h1>
+            <p>Explore thousands of high-quality wallpapers curated for your desktop, phone, and tablet. Free to download, always.</p>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search wallpapers... (nature, abstract, minimal...)" id="searchInput">
+                <button class="search-btn" onclick="searchWallpapers()">Search</button>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="number" id="countWallpapers">50K+</div>
+                    <div class="label">Wallpapers</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="number">4K+</div>
+                    <div class="label">Resolution</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="number">100%</div>
+                    <div class="label">Free</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#categories"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="section-header">
+            <div class="badge">Browse</div>
+            <h2>Popular Categories</h2>
+            <p>Find the perfect wallpaper from our curated collections</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card" onclick="filterByCategory('nature')">
+                <img src="IMAGES/NATURE/nat1.jpeg" alt="Nature">
+                <div class="overlay">
+                    <h3>Nature</h3>
+                    <span>12,400 wallpapers</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('abstract')">
+                <img src="IMAGES/ABSTRACT/abs1.jpg" alt="Abstract">
+                <div class="overlay">
+                    <h3>Abstract</h3>
+                    <span>8,200 wallpapers</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('space')">
+                <img src="IMAGES/SPACE/spc1.jpg" alt="Space">
+                <div class="overlay">
+                    <h3>Space</h3>
+                    <span>5,800 wallpapers</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('minimal')">
+                <img src="IMAGES/MINIMALS/min1.jpg" alt="Minimal">
+                <div class="overlay">
+                    <h3>Minimal</h3>
+                    <span>9,100 wallpapers</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('animals')">
+                <img src="IMAGES/ANIMALS/an1.jpg" alt="Animals">
+                <div class="overlay">
+                    <h3>Animals</h3>
+                    <span>6,500 wallpapers</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('city')">
+                <img src="IMAGES/CITIES/city.jpg" alt="City">
+                <div class="overlay">
+                    <h3>City</h3>
+                    <span>7,300 wallpapers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="section-header">
+            <div class="badge">Explore</div>
+            <h2>Wallpaper Gallery</h2>
+            <p>Browse our handpicked collection of premium wallpapers</p>
+        </div>
+        <div class="gallery-filters">
+            <button class="filter-btn active" onclick="setFilter(this, 'all')">All</button>
+            <button class="filter-btn" onclick="setFilter(this, 'nature')">🌿 Nature</button>
+            <button class="filter-btn" onclick="setFilter(this, 'abstract')">🎨 Abstract</button>
+            <button class="filter-btn" onclick="setFilter(this, 'space')">🌌 Space</button>
+            <button class="filter-btn" onclick="setFilter(this, 'minimal')">◻️ Minimal</button>
+            <button class="filter-btn" onclick="setFilter(this, 'dark')">🌙 Dark</button>
+            <button class="filter-btn" onclick="setFilter(this, 'colorful')">🌈 Colorful</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items injected by JS -->
+        </div>
+        <div class="load-more-container">
+            <button class="btn-primary" onclick="loadMore()">
+                <i class="fas fa-plus"></i> Load More Wallpapers
+            </button>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured-section" id="featured">
+        <div class="featured-bg">
+            <img src="IMAGES/ANIMALS/an10.jpg" alt="">
+            <div class="featured-bg-overlay"></div>
+        </div>
+        <div class="featured-content">
+            <div class="featured-text">
+                <div class="badge">Why Choose Us</div>
+                <h2>Premium Quality Wallpapers, Completely Free</h2>
+                <p>WallpaperHub brings you the finest collection of wallpapers from talented artists and photographers around the world. Every wallpaper is carefully curated to ensure the highest quality for your screens.</p>
+                <ul class="featured-features">
+                    <li><i class="fas fa-check"></i> Ultra HD 4K & 8K resolution wallpapers</li>
+                    <li><i class="fas fa-check"></i> New wallpapers added daily</li>
+                    <li><i class="fas fa-check"></i> Optimized for all screen sizes</li>
+                    <li><i class="fas fa-check"></i> No watermarks, no sign-up required</li>
+                    <li><i class="fas fa-check"></i> AI-powered smart search & recommendations</li>
+                </ul>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="#gallery" class="btn-primary">
+                        <i class="fas fa-images"></i> Browse Gallery
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-play"></i> Watch Demo
+                    </a>
+                </div>
+            </div>
+            <div class="featured-preview">
+                <div class="preview-card">
+                    <img src="IMAGES/CITIES/city17.jpg" alt="">
+                </div>
+                <div class="preview-card">
+                    <img src="IMAGES/MOUNTAINS/mount15.jpg" alt="">
+                </div>
+                <div class="preview-card">
+                    <img src="IMAGES/NATURE/nat16.jpg" alt="">
+                </div>
+                <div class="preview-card">
+                    <img src="IMAGES/DESERTS/des17.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="section trending-section" id="trending">
+        <div class="section-header">
+            <div class="badge">🔥 Hot</div>
+            <h2>Trending This Week</h2>
+            <p>The most downloaded wallpapers by our community</p>
+        </div>
+        <div class="trending-grid" id="trendingGrid">
+            <!-- Trending items injected by JS -->
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Stay Updated ✨</h2>
+            <p>Get weekly wallpaper collections delivered straight to your inbox. Join 50,000+ wallpaper enthusiasts!</p>
+            <form class="newsletter-form" onsubmit="subscribe(event)">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://i.imgur.com/placeholder-logo.png" alt="WallpaperHub"
+                     onerror="this.outerHTML='<h3 style=&quot;margin-bottom:15px;font-size:1.3rem;&quot;>Wallpaper<span style=&quot;color:#f0a050;&quot;>Hub</span></h3>'">
+                <p>Your ultimate destination for beautiful, high-quality wallpapers. Free forever, for everyone.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">New Additions</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Artists</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Design Tips</a></li>
+                    <li><a href="#">Color Palettes</a></li>
+                    <li><a href="#">API Access</a></li>
+                    <li><a href="#">Plugins</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About-us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="Privacy & Policy.html">Privacy Policy</a></li>
+                    <li><a href="Terms of use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 WallpaperHub capstone project group10. All rights reserved. Made with ❤️ for wallpaper lovers.</p>
+            <div class="footer-bottom-links">
+                <a href="Privacy & Policy.html">Privacy</a>
+                <a href="Terms of use.html">Terms</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-body">
+                <h3 id="modalTitle">Wallpaper Title</h3>
+                <p id="modalDesc">Resolution: 3840 x 2160 • Format: JPG • Size: 4.2 MB</p>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="downloadWallpaper()">
+                        <i class="fas fa-download"></i> Download 4K
+                    </button>
+                    <button class="btn-secondary" onclick="downloadWallpaper()">
+                        <i class="fas fa-download"></i> Download HD
+                    </button>
+                    <button class="btn-secondary" id="modalLikeBtn" onclick="toggleModalLike()">
+                        <i class="far fa-heart"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/range.js"></script>
+      
+    
+</body>
+</html>
